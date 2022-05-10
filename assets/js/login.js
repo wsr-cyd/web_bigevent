@@ -58,7 +58,7 @@ $(function() {
       url: '/api/login',
       method: 'POST',
       // 快速获取表单中的数据
-      data: $(this).serialize(),
+      data: {username:$("#form_login [name=username]").val(),password:$("#form_login [name=password]").val()},
       success: function(res) {
         if (res.status !== 0) {
           return layer.msg('登录失败！')
