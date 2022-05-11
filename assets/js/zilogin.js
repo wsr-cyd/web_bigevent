@@ -27,7 +27,7 @@ $(function(){
 
     $("#form_reg").on('submit',function(e){
         e.preventDefault();
-        // alert("d因");
+        alert("d因");
         $.post('http://www.liulongbin.top:3007/api/reguser',{username:$("#form_reg [name=username]").val(),password:$("#form_reg [name=password]").val()},function(res){
              console.log(res);
              if(res.status !== 0){
@@ -45,13 +45,15 @@ $(function(){
         e.preventDefault()
         // alert("d因");
         $.ajax({
-          url: '/api/login',
+          url: 'http://ajax.frontend.itheima.net/api/login',
           method: 'POST',
           // 快速获取表单中的数据
           data: $(this).serialize(),
           success: function(res) {
+            console.log(res.message);
+            
             if (res.status !== 0) {
-              layer.msg('登录失败！')
+              return layer.msg('登录失败！')
               location.href = '/zindex.html'
             }
             layer.msg('登录成功！')
