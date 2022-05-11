@@ -45,7 +45,7 @@ $(function(){
         e.preventDefault()
         // alert("d因");
         $.ajax({
-          url: 'http://ajax.frontend.itheima.net/api/login',
+          url: 'http://api-breakingnews-web.itheima.net/api/login',
           method: 'POST',
           // 快速获取表单中的数据
           data: $(this).serialize(),
